@@ -1,19 +1,12 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 import {
   Card, CardPoster, CardRating, CardTitle, CardReleaseDate,
 } from './MovieCard.style';
-import { posterBaseUrl } from '../../constants/posterBaseUrl';
+import { POSTER_BASE_URL } from '../../constants/movieUrl';
 import { colors } from '../../constants/movieRateColors';
-
-const data = {
-  id: '610150',
-  title: 'Samaritan',
-  poster_path: '/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg',
-  vote_average: 8,
-  release_date: '2022-06-11',
-};
 
 const formatDate = (date) => {
   if (!date) {
@@ -47,26 +40,30 @@ const getRatingColor = (rate) => {
   return colors.low;
 };
 
-const MovieCard = () => {
+const MovieCard = ({ details }) => {
+  const {
+    id, poster_path, vote_average, release_date, title,
+  } = details;
+
   return (
     <Card
       as={Link}
-      to={`/${data.id}`}
+      to={`/${id}`}
     >
       <CardPoster>
         <LazyLoadImage
-          src={posterBaseUrl + data.poster_path}
+          src={poster_path ? POSTER_BASE_URL + poster_path : '/failed-image.png'}
           effect="opacity"
         />
-        <CardRating style={{ backgroundColor: getRatingColor(data.vote_average) }}>
-          {data.vote_average?.toFixed(1) || 'NR'}
+        <CardRating style={{ backgroundColor: getRatingColor(vote_average) }}>
+          {vote_average?.toFixed(1) || 'NR'}
         </CardRating>
       </CardPoster>
       <CardTitle>
-        {data.title}
+        {title}
       </CardTitle>
       <CardReleaseDate>
-        {formatDate(data.release_date)}
+        {formatDate(release_date)}
       </CardReleaseDate>
     </Card>
   );

@@ -2,14 +2,14 @@ import React from 'react';
 import { DescriptionWrapper, Query, PageIndicator } from './ListDescription.style';
 import { Highlight } from '../Typography';
 
-const ListDescription = () => {
+const ListDescription = ({ query, currentPage, totalPages }) => {
   return (
     <DescriptionWrapper>
       <Query>
-        Popular
+        {query || 'Popular'}
       </Query>
       <PageIndicator>
-        Page <Highlight>12</Highlight> of 500
+        Page <Highlight>{currentPage}</Highlight> of {totalPages}
       </PageIndicator>
     </DescriptionWrapper>
   );

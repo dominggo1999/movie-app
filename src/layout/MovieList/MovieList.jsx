@@ -2,19 +2,19 @@ import React from 'react';
 import { ListWrapper } from './MovieList.style';
 import MovieCard from '../../common/MovieCard/MovieCard';
 
-const movies = Array.from(Array(12).keys());
-
-const MovieList = () => {
+const MovieList = ({ movies }) => {
   return (
     <ListWrapper>
       {
-        movies.map((i) => {
+        movies?.length > 0 && movies.map((details) => {
           return (
-            <MovieCard id={Math.random() + Math.random()} />
+            <MovieCard
+              details={details}
+              key={details.id}
+            />
           );
         })
       }
-
     </ListWrapper>
   );
 };

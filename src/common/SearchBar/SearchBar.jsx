@@ -1,8 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { SearchBarWrapper, InputField, SubmitButton } from './SearchBar.style';
+import { MoviesContext } from '../../context/MoviesContext';
 
 const SearchBar = () => {
+  const {
+    goToParam,
+  } = useContext(MoviesContext);
   const queryRef = useRef();
 
   const findMovies = (e) => {
@@ -10,7 +14,8 @@ const SearchBar = () => {
     const query = queryRef.current.value;
 
     if (query) {
-      console.log('Searching movies with query : ', query);
+      goToParam('query', query);
+      goToParam('page', 1);
     }
   };
 
