@@ -21,6 +21,7 @@ export const PaginationButton = styled.button`
     py-1
     flex
     items-center
+    hover:bg-accent-dimmed
   `}
 `;
 

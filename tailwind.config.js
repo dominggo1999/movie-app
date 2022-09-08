@@ -6,6 +6,7 @@ module.exports = {
         primary: '#04103A',
         'primary-dimmed': '#2D375A',
         accent: '#4AD0EE',
+        'accent-dimmed': '85e6fc',
       },
       fontFamily: {
         primary: ['Poppins', 'sans-serif'],
