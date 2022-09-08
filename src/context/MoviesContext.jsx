@@ -1,5 +1,5 @@
 import React, {
-  createContext, useEffect, useState,
+  createContext, useLayoutEffect, useState,
 } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import queryString from 'query-string';
@@ -48,7 +48,7 @@ const createUrl = (page, query) => {
 const MoviesProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [movies, setMovies] = useState();
+  const [movies, setMovies] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const { pathname, search } = useLocation();
   const params = queryString.parse(search);
@@ -88,7 +88,7 @@ const MoviesProvider = ({ children }) => {
     navigate(`${pathname}?${queryString.stringify(params)}`);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     getMovies();
 
     return () => {
