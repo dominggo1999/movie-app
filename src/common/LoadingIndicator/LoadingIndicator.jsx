@@ -1,10 +1,16 @@
 import React from 'react';
-import { LoadingIndicatorWrapper } from './LoadingIndicator.style';
+import { LoadingIndicatorWrapper, IconWrapper, LoadingText } from './LoadingIndicator.style';
+import { ReactComponent as CameraIcon } from '../../icons/camera.svg';
 
 const LoadingIndicator = () => {
   return (
     <LoadingIndicatorWrapper>
-      Loading ....
+      <IconWrapper>
+        <CameraIcon />
+      </IconWrapper>
+      <LoadingText>
+        Loading ....
+      </LoadingText>
     </LoadingIndicatorWrapper>
   );
 };
