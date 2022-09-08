@@ -3,6 +3,7 @@ import tw, { styled } from 'twin.macro';
 export const CardPoster = styled.div`
   ${tw`
     relative
+    bg-primary-dimmed
   `}
 
   aspect-ratio: 270 / 380;
