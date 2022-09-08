@@ -3,7 +3,7 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
 import {
-  Card, CardPoster, CardRating, CardTitle, CardReleaseDate,
+  Card, CardPoster, CardPosterShadow, CardRating, CardTitle, CardReleaseDate,
 } from './MovieCard.style';
 import { POSTER_BASE_URL } from '../../constants/movieUrl';
 import { colors } from '../../constants/movieRateColors';
@@ -51,6 +51,7 @@ const MovieCard = ({ details }) => {
       to={`/${id}`}
     >
       <CardPoster>
+        <CardPosterShadow />
         <LazyLoadImage
           src={poster_path ? POSTER_BASE_URL + poster_path : '/failed-image.png'}
           effect="opacity"

@@ -1,12 +1,5 @@
 import tw, { styled } from 'twin.macro';
 
-export const Card = styled.div`
-  ${tw`
-    flex
-    flex-col
-  `}
-`;
-
 export const CardPoster = styled.div`
   ${tw`
     relative
@@ -34,6 +27,15 @@ export const CardPoster = styled.div`
   }
 `;
 
+export const CardPosterShadow = styled.div`
+  ${tw`
+    absolute 
+    w-full 
+    h-full
+    z-10
+  `}
+`;
+
 export const CardRating = styled.span`
   ${tw`
     flex 
@@ -48,6 +50,7 @@ export const CardRating = styled.span`
     bottom-2
     text-xl 
     font-bold
+    z-20
   `}
 `;
 
@@ -65,4 +68,21 @@ export const CardReleaseDate = styled.span`
     text-lg
     opacity-30
   `}
+`;
+
+export const Card = styled.div`
+  ${tw`
+    flex
+    flex-col
+  `}
+
+  &:hover ${CardTitle}{
+    ${tw`
+      text-accent
+    `}
+  }
+
+  &:hover ${CardPosterShadow}{
+    background: linear-gradient(357deg, rgba(4,16,58,0.879) 0%, rgba(0,212,255,0.128) 55%);
+  }
 `;
