@@ -76,7 +76,9 @@ const MoviesProvider = ({ children }) => {
         setError(error);
       }
     } finally {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 800);
     }
   };
 
