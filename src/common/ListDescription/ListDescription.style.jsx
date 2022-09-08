@@ -5,6 +5,7 @@ export const DescriptionWrapper = styled(Wrapper)`
   ${tw`
     justify-between
     items-center
+    mb-8
   `}
 `;
 
