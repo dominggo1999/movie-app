@@ -48,7 +48,7 @@ const MovieCard = ({ details }) => {
   return (
     <Card
       as={Link}
-      to={`/${id}`}
+      to={`/details/${id}`}
     >
       <CardPoster>
         <CardPosterShadow />

@@ -4,6 +4,7 @@ import Header from './layout/Header/Header';
 import Home from './pages/Home';
 import MoviesProvider from './context/MoviesContext';
 import NotFound from './pages/NotFound';
+import Details from './pages/Details';
 
 const App = () => {
   return (
@@ -15,8 +16,8 @@ const App = () => {
           element={<Home />}
         />
         <Route
-          path="/:movieID"
-          element={<p>Movie details</p>}
+          path="/details/:movieID"
+          element={<Details />}
         />
         <Route
           path="*"
