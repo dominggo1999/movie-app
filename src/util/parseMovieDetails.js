@@ -18,6 +18,7 @@ export const parseDetails = ({
   title,
   overview,
   poster_path,
+  id,
 }) => {
   return {
     genres: arrayToString(genres, 'name'),
@@ -29,5 +30,6 @@ export const parseDetails = ({
     title,
     overview,
     posterUrl: poster_path ? POSTER_BASE_URL + poster_path : '/failed-image.png',
+    id,
   };
 };

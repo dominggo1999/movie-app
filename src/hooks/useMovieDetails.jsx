@@ -6,6 +6,7 @@ import { MOVIE_DETAILS_BASE_URL, MOVIE_API_KEY } from '../constants/movieUrl';
 const defaultParams = {
   api_key: MOVIE_API_KEY,
   adult: false,
+  guest_session_id: localStorage.getItem('sessionId'),
 };
 
 const useMovieDetails = () => {

@@ -9,10 +9,11 @@ import {
   SubTitle,
   SubText,
 } from './MovieDetails.tyle';
+import RateMovie from '../../common/RateMovie/RateMovie';
 
 const MovieDetails = ({ details }) => {
   const {
-    genres, runtime, spokenLanguages, status, releasedDate, productionCountries, title, overview, posterUrl,
+    genres, runtime, spokenLanguages, status, releasedDate, productionCountries, title, overview, posterUrl, id,
   } = (details);
 
   return (
@@ -84,6 +85,7 @@ const MovieDetails = ({ details }) => {
           </SubText>
         </SubContent>
 
+        <RateMovie id={id} />
       </InfoWrapper>
     </MovieDetailsWrapper>
   );
