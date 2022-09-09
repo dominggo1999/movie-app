@@ -17,10 +17,6 @@ const formatDate = (date) => {
 };
 
 const getRatingColor = (rate) => {
-  if (rate === 0) {
-    return colors.mid;
-  }
-
   if (rate >= 7) {
     return colors.high;
   }
