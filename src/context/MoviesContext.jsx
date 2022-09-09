@@ -85,7 +85,7 @@ const MoviesProvider = ({ children }) => {
   const goToParam = (key, value) => {
     params[key] = value;
 
-    navigate(`${pathname}?${queryString.stringify(params)}`);
+    navigate(`/?${queryString.stringify(params)}`);
   };
 
   useLayoutEffect(() => {
